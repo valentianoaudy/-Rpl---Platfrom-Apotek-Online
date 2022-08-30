@@ -1,0 +1,640 @@
+body{
+    font-family: Avenir;
+    margin:0;
+
+    background-color: #f7f6f2;
+}
+
+
+
+#home{
+    height:200px;
+    transition:all 600ms ease-in-out;
+    -moz-transition:all 600ms ease-in-out;
+}
+
+#top{
+    z-index:2;
+    width:100%;
+    height: 140px;
+    background-color: #f7f6f2;
+}
+
+.header{
+    color:#2d2d2d;
+    font-family: Avenir;
+    font-size:10px;
+    float:left;
+    margin-left: 3%;
+    padding-bottom: 10px;
+}
+
+.header h2{
+    margin-top: 20px;
+}
+.header h3{
+    font-size: 50px;
+    float: left;
+    margin-top: -20px;
+    color: #447136;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.kliklogout ul {
+    margin: 0; padding: 0;
+    float: right;
+    margin-right: 3%;
+    margin-top: 35px;
+}
+
+.kliklogout ul li {
+    display: inline;
+    margin: 20px;
+}
+
+.kliklogout ul li a {
+    float: right; 
+    text-decoration: none;
+    font-size: 12px;
+    padding: 9px 14px;
+    font-weight: 500;
+}
+
+
+.logout{
+    background-color: #447136;
+    color: #fff;
+    float: right;
+    border-radius: 10px;
+    margin-top: 3px;
+}
+
+.logout:hover{
+    background-color: #416137;
+}
+
+.pembatasmenu{
+    width: 0px; 
+    height: 38px; 
+    border: 1px solid #447136 ;
+    float: right;
+    margin-right: 8%;
+
+}
+
+
+
+.infologin {
+    float: right;
+    margin-top: -40px;
+    color: #000;
+    margin-right: 50%;
+}
+.menu {
+    float: right;
+    width: 100%;
+    background-color: #447136;
+    margin-top: -50px;
+}
+.menu ul {
+    margin: 0; padding: 0;
+    float: left;
+    margin-left: 3%;
+}
+.menu ul li {
+    display: inline;
+
+}
+.menu ul li a {
+    float: left; text-decoration: none;
+    color: #fff; 
+    margin-right: 5px;
+    font-size: 12px;
+    padding: 18px 18px;
+    font-weight: 500;
+}
+
+.menu ul li a:hover{
+    color: white;
+    background-color: #416137;
+}
+
+.active{
+    color: white;
+    background-color: #416137;
+}
+
+
+
+#content{
+    float: left;
+
+    position: relative;
+    width: 92%;
+
+    margin-left: 4%;
+    margin-top: 1%;
+
+}
+
+
+
+
+#container hr{
+    width: 100%;
+    height: 4px solid #416137;
+    border-bottom: 7px solid #416137;
+    border-top-style: none;
+    border-left-style: none;
+    border-right-style: none;
+    margin-top: -10px;
+}
+
+.tambahdata_admin a{
+    background: #447135;
+    text-decoration: none;
+    color: white;
+    font-size: 11pt;
+    border: none;
+    float: left;
+
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 10px 20px;
+    transition: 0.3s;
+}
+
+.tambahdata_admin a:hover{
+    background: #2f4c25;
+
+    color: white;
+
+}
+
+.tambahdata_narkotika a{
+    background: #447135;
+    text-decoration: none;
+    color: white;
+    font-size: 11pt;
+    border: none;
+    float: left;
+
+    margin-top: -10px;
+    border-radius: 10px;
+    padding: 10px 20px;
+    transition: 0.3s;
+}
+
+.tambahdata_narkotika a:hover{
+    background: #2f4c25;
+
+    color: white;
+
+}
+
+
+
+.tabel_admin{
+    float: left;
+    border-collapse: collapse;
+    border-style: none;
+    text-align: center;clear:both;
+    height:100px;
+    overflow:auto;
+    float:left;
+    width:100%;
+    background:#E2E6E7;
+    margin-top: 20px;
+    width: 100%;
+
+    border-radius: 10px 10px 10px 10px;
+
+    border-spacing: 0;
+
+
+}
+
+
+
+.tabel_admin, th, td{
+
+    padding: 8px 20px;
+
+
+}
+
+.tabel_admin tr th{
+    background: #416137;
+    color: #fff;
+    font-weight: normal;
+
+}
+
+.tabel_admin tr td{
+    border-bottom: 2px solid #416137;
+}
+
+/* POPUP LOGIN */	
+
+#tambahdata_admin {
+    visibility: hidden;
+    opacity: 0;
+    margin-top: -200px;
+}
+
+#tambahdata_admin:target {
+    visibility:visible;
+    opacity: 1;
+    background-color: rgba(255,255,255,0.8);
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:0;
+    z-index: 99999999999;
+    -webkit-transition:all 1s;
+    -moz-transition:all 1s;
+    transition:all 1s;
+}
+
+@media (min-width: 768px){
+    .tambahdata_admin-container {
+        width:600px;
+    }
+}
+
+@media (max-width: 767px){
+    .tambahdata_admin-container {
+        width:100%;
+    }
+}
+
+.tambahdata_admin-container {
+    position: relative;
+    margin:7% auto;
+    height: 390px;
+    padding:30px 20px;
+    background-color: #447135;
+    color:#fff;
+    width: 300px;
+    border-radius: 10px;
+}
+
+a.tambahdata_admin-close {
+    position: absolute;
+    top:8px;
+    right:8px;
+    background-color: #cccdcd;
+    padding:7px 10px;
+    font-size: 20px;
+    text-decoration: none;
+    line-height: 1;
+    color:#333;
+    border-radius: 10px;
+}
+
+
+.tambahdata_admin-form label{
+    text-align: center;
+    font-size: 12px;
+    margin-top: 10px;
+
+    float: left;	
+
+
+}
+
+
+.tambahdata_admin-container h4{
+    margin-bottom: -10px;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: -15px;
+}
+
+.tambahdata_admin-container p{
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+
+}
+
+
+/* POPUP LOGIN */	
+
+#editdata_admin {
+    visibility: hidden;
+    opacity: 0;
+    margin-top: -200px;
+}
+
+#editdata_admin:target {
+    visibility:visible;
+    opacity: 1;
+    background-color: rgba(255,255,255,0.8);
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:0;
+    z-index: 99999999999;
+    -webkit-transition:all 1s;
+    -moz-transition:all 1s;
+    transition:all 1s;
+}
+
+@media (min-width: 768px){
+    .editdata_admin-container {
+        width:600px;
+    }
+}
+
+@media (max-width: 767px){
+    .editdata_admin-container {
+        width:100%;
+    }
+}
+
+.editdata_admin-container {
+    position: relative;
+    margin:7% auto;
+    height: 350px;
+    padding:30px 20px;
+    background-color: #447135;
+    color:#fff;
+    width: 300px;
+    border-radius: 10px;
+}
+
+a.editdata_admin-close {
+    position: absolute;
+    top:8px;
+    right:8px;
+    background-color: #cccdcd;
+    padding:7px 10px;
+    font-size: 20px;
+    text-decoration: none;
+    line-height: 1;
+    color:#333;
+    border-radius: 10px;
+}
+
+
+.editdata_admin-form label{
+    text-align: center;
+    font-size: 12px;
+    margin-top: 10px;
+
+    float: left;	
+
+
+}
+
+
+.editdata_admin-container h4{
+    margin-bottom: -10px;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: -15px;
+}
+
+.editdata_admin-container p{
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+
+}
+
+
+
+input{
+    width: 260px;
+    background-color: #fbf6f2;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-right: 30px;
+    float: left;
+    border-style: none;
+
+
+}
+.simpan{
+    background: #3b5a31;
+    color: white;
+    font-size: 11pt;
+    width: 100%;
+    border: none;
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+label > input[type="radio"] {
+    display: none;
+}
+label > input[type="radio"] + *::before {
+    content: "";
+    display: inline-block;
+    vertical-align: bottom;
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.3rem;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 0.1rem;
+    margin-left: 45px;
+    margin-top: 15px;
+    border-color: gray;
+}
+label > input[type="radio"]:checked + * {
+    color: #fff;
+}
+label > input[type="radio"]:checked + *::before {
+    background: #fff;
+    border-color: #fff;
+}
+
+.aksi a{
+    background: #3b5a31;
+    color: white;
+    font-size: 8pt;
+    margin-right: 20px;
+    margin-left: -10px;
+    float: right;
+    border: none;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+#pengaturanadmin{
+    float: left;
+    margin-top: 80px;
+    width: 100%;
+
+
+}
+
+.pengaturanakun {
+    background: #447135;
+    text-decoration: none;
+    color: white;
+    font-size: 11pt;
+    text-align: center;
+    border: none;
+    margin-left: -15.3%;
+    float: left;
+    width: 12%;
+    margin-top: -46px;
+    border-radius: 10px;
+    padding: 10px 20px;
+    transition: 0.3s;
+}
+
+.akun{
+    float: left;
+    margin-top: -6%;
+    margin-left: 3%;
+    border: 4px solid #447135;
+    border-radius: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#pengaturanadmin img{
+    float: left;
+    margin-top: 40px;
+}
+
+.akun a{
+    background: #447135;
+    text-decoration: none;
+    color: white;
+    font-size: 11pt;
+    text-align: center;
+    border: none;
+
+    float: left;
+
+    border-radius: 10px;
+    padding: 10px 20px;
+    transition: 0.3s;
+}
+
+.akun a:hover{
+    background: #2f4c25;
+
+    color: white;
+
+}
+
+.tambahnarkotika{
+    float: left;
+
+}
+
+.psikotropika{
+    width: 100%;
+    float: left;
+    margin-top: 2%;
+}
+
+.zatadiktif{
+    width: 100%;
+    float: left;
+    margin-top: 2%;
+}
+
+.formnarkotika{
+    float: left;
+    width: 100%;
+
+}
+
+.formnarkotika label{
+    font-weight: 400;
+    font-size: 15px;
+}
+
+input[type=text], select, textarea, [type=file]  {
+    width: 100%;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+
+
+input select{
+}
+
+.tombol{
+    width: 100%;
+    background-color: #447136;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.kategoriinformasi a{
+    float: left;
+    background-color: #447136;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    margin-right: 20px;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.tambahdata_berita a{
+    background: #447135;
+    text-decoration: none;
+    color: white;
+    font-size: 11pt;
+    border: none;
+    float: left;
+
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 10px 20px;
+    transition: 0.3s;
+}
+
+.tambahdata_berita a:hover{
+    background: #2f4c25;
+    color: white;
+}
+
+.aksi a{
+    background: #3b5a31;
+    color: white;
+    font-size: 8pt;
+    margin-right: 20px;
+    margin-left: -10px;
+    float: right;
+    border: none;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+}

@@ -1,0 +1,15 @@
+body{
+    padding: 20px 30%;
+}
+h2{
+    color: #447136;
+    letter-spacing: 10px;
+}
+a{
+    text-decoration: none;
+    color: #447136;
+}
+a:hover{
+    text-decoration: underline;
+    color: darkred;
+}
